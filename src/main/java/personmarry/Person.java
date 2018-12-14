@@ -1,4 +1,4 @@
-package main.java;
+package personmarry;
 
 public class Person {
     private final boolean man;
