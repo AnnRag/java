@@ -1,10 +1,10 @@
 package BeanUtilsTest;
 
-public class To {
+public class ToTrue {
 
     private int number;
 
-    public To(int number) {
+    public ToTrue(int number) {
         this.number = number;
     }
 

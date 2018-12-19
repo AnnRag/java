@@ -1,9 +1,10 @@
 package BeanUtilsTest;
 
-public class From {
+public class FromFalse {
+
     private int number;
 
-    public From(int number) {
+    public FromFalse(int number) {
         this.number = number;
     }
 
