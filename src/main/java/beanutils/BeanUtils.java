@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class BeanUtils {
 
@@ -53,12 +54,12 @@ public class BeanUtils {
         }
 
         Iterator<Method> keyIterator = getset.keySet().iterator();
-        while (keyIterator.hasNext()) {
-            Method key = keyIterator.next();
-            if (key.getReturnType().equals(getset.get(key).getParameterTypes()[0]) ||
-                    key.getReturnType().isAssignableFrom(getset.get(key).getParameterTypes()[0])){
+        for (Map.Entry<Method,Method> entry: getset.entrySet()) {
+            Method key = entry.getKey();
+            if (key.getReturnType().equals(entry.getValue().getParameterTypes()[0]) ||
+                    key.getReturnType().isAssignableFrom(entry.getValue().getParameterTypes()[0])){
                 try {
-                    getset.get(key).invoke(to, key.invoke(from));
+                    entry.getValue().invoke(to, key.invoke(from));
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {
