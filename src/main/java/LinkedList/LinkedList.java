@@ -28,12 +28,15 @@ public class LinkedList<E> implements Iterable<E>{
         public void setItem(E item){
             this.item = item;
         }
+
         Node<E> getNext(){
             return next;
         }
+
         E getItem(){
             return item;
         }
+
         Node<E> getPrev() {
             return prev;
         }
