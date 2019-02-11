@@ -8,6 +8,6 @@ public class Fibon {
     }
 
     public static void main(String[] args) {
-        System.out.println(Fib(3));
+        System.out.println(Fib(6));
     }
 }
